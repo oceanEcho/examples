@@ -1,0 +1,24 @@
+@import "../../styles/colors.scss";
+
+.Layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 1.7fr 1fr 1fr;
+  grid-template-rows: 128px 1.8fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "sidebar container container container"
+    "sidebar container container container"
+    "sidebar container container container";
+}
+
+.Container {
+  grid-area: container;
+  background-color: $light-color;
+  overflow: auto;
+}
+
+.Sidebar {
+  grid-area: sidebar;
+  background-color: $main-color;
+}

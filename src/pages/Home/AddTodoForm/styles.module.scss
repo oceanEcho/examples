@@ -1,0 +1,12 @@
+.AddTodoForm {
+  display: flex;
+  width: 480px;
+
+  > * {
+    margin-right: 8px;
+  }
+
+  :last-child {
+    margin-right: 0;
+  }
+}

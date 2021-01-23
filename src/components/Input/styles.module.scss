@@ -1,0 +1,12 @@
+@import "../../styles/colors.scss";
+
+.Input {
+  box-sizing: border-box;
+  width: 360px;
+  font-size: 20px;
+  line-height: 1.5rem;
+  color: $dark-color;
+  outline: none;
+  border: 2px solid $dark-color;
+  padding: 10px;
+}
