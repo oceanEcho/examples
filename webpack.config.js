@@ -10,7 +10,7 @@ module.exports = {
   },
   target: "web",
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
   output: {
     filename: "[name].js",
@@ -22,6 +22,11 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
+      },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -38,6 +43,6 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, "dist"),
-    hot: true
- },
+    hot: true,
+  },
 };
