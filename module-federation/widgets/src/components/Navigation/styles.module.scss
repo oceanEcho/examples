@@ -1,0 +1,16 @@
+@import "../../styles/colors.scss";
+
+.NavLink {
+  padding: 12px;
+  color: $light-color;
+  display: block;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $darker-main-color;
+  }
+}
+
+.ActiveNavLink {
+  background-color: $darkest-main-color;
+}

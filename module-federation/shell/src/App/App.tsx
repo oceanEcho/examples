@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Layout } from '../components/Layout';
 import Navigation from '../components/Navigation';
 import { About } from '../pages/About';
-import { Home } from '../pages/Home';
+import Todo from 'widgets/Todo';
 
 import store from './store';
 
@@ -19,7 +19,7 @@ export const App = () => {
               <About />
             </Route>
             <Route exact path='/'>
-              <Home />
+              <Todo />
             </Route>
           </Switch>
         </Layout>

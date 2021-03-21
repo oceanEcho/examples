@@ -2,6 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { DefinePlugin } = webpack;
+const { ModuleFederationPlugin } = webpack.container;
+
+const deps = require('./package.json').dependencies;
 
 module.exports = {
   mode: 'none',
@@ -15,6 +19,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: 'auto',
   },
   module: {
     rules: [
@@ -33,13 +38,24 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'index.html'),
     }),
-    new webpack.DefinePlugin({
+    new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+    new ModuleFederationPlugin({
+      name: 'shell',
+      filename: 'shell.js',
+      shared: {
+        react: { requiredVersion: deps.react },
+        'react-dom': { requiredVersion: deps['react-dom'] },
+      },
+      remotes: {
+        widgets: `widgets@http://localhost:3002/widgets.js`,
+      },
     }),
   ],
   devServer: {
-    historyApiFallback: true,
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
+    port: 3001,
   },
 };

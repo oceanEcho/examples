@@ -1,0 +1,20 @@
+@import "../../styles/colors.scss";
+
+.Layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "sidebar container";
+}
+
+.Container {
+  grid-area: container;
+  background-color: $light-color;
+  overflow: auto;
+}
+
+.Sidebar {
+  grid-area: sidebar;
+  background-color: $main-color;
+}

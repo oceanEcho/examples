@@ -1,7 +1,7 @@
 {
   "name": "js-to-ts",
   "version": "1.0.0",
-  "description": "App for demonstrating the transition from javascript to typescript",
+  "description": "App for demonstration of the transition from javascript to typescript",
   "scripts": {
     "dev": "webpack --mode development",
     "start": "webpack serve --open",
