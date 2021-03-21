@@ -1,0 +1,42 @@
+@import "../../styles/colors.scss";
+
+@keyframes example {
+  0% {
+    width: 0%;
+  }
+
+  25% {
+    width: 25%;
+  }
+
+  50% {
+    width: 80%;
+  }
+
+  80% {
+    width: 90%;
+  }
+
+  90% {
+    width: 95%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.Loader {
+  background-color: $accent-color;
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  width: 100%;
+  height: 5px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation-name: example;
+  animation-duration: 2s;
+}

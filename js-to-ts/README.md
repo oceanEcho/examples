@@ -1,2 +1,3 @@
-# js-to-ts
-App for demonstrating the transition from javascript to typescript
+# examples/js-to-ts
+
+App for demonstration the transition from javascript to typescript
