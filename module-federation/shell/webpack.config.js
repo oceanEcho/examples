@@ -47,6 +47,9 @@ module.exports = {
       shared: {
         react: { requiredVersion: deps.react },
         'react-dom': { requiredVersion: deps['react-dom'] },
+        'react-query': {
+          requiredVersion: deps['react-query'],
+        },
       },
       remotes: {
         widgets: `widgets@http://localhost:3002/widgets.js`,

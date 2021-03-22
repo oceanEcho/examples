@@ -3,3 +3,9 @@ declare module 'widgets/Todo' {
 
   export default Todo;
 }
+
+declare module 'widgets/Gallery' {
+  const Gallery: React.ComponentType;
+
+  export default Gallery;
+}

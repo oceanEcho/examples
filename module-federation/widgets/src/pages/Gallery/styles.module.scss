@@ -1,0 +1,11 @@
+.Gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px;
+}
+
+.Image {
+  object-fit: cover;
+  background-color: #f2f2f2;
+  margin: 0 8px 8px 0;
+}

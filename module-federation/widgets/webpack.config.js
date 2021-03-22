@@ -44,12 +44,16 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'widgets',
       filename: 'widgets.js',
-      exposes: {
-        './Todo': './src/App',
-      },
       shared: {
         react: { requiredVersion: deps.react },
         'react-dom': { requiredVersion: deps['react-dom'] },
+        'react-query': {
+          requiredVersion: deps['react-query'],
+        },
+      },
+      exposes: {
+        './Todo': './src/App',
+        './Gallery': './src/pages/Gallery/Gallery',
       },
     }),
   ],
