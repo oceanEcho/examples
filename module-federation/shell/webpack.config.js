@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { DefinePlugin } = webpack;
 const { ModuleFederationPlugin } = webpack.container;
+const CopyPlugin = require('copy-webpack-plugin');
 
 const deps = require('./package.json').dependencies;
 
@@ -54,6 +55,14 @@ module.exports = {
       remotes: {
         widgets: `widgets@http://localhost:3002/widgets.js`,
       },
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'environment.json'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
     }),
   ],
   devServer: {

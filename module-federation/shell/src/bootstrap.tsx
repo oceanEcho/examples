@@ -2,7 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import { App } from './App';
+import { config } from './config';
 
 import './index.scss';
 
-render(<App />, document.getElementById('root'));
+config.init().then(() => {
+  render(<App />, document.getElementById('root'));
+});

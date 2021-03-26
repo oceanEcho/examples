@@ -5,13 +5,22 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Layout } from '../components/Layout';
 import { Navigation } from '../components/Navigation';
 import { About } from '../pages/About';
+import { Microservice } from '../components/LazyService/types';
+import { LazyService } from '../components/LazyService';
+import { Loader } from '../components/Loader';
+import { config } from '../config';
 
 import Todo from 'widgets/Todo';
-import Gallery from 'widgets/Gallery';
 
 const queryClient = new QueryClient();
 
 export const App = () => {
+  const gallery: Microservice = {
+    url: config.microservices.widgets.url,
+    scope: 'widgets',
+    module: './Gallery',
+  };
+
   return (
     <QueryClientProvider client={queryClient} contextSharing>
       <Router>
@@ -21,7 +30,7 @@ export const App = () => {
               <About />
             </Route>
             <Route path='/gallery'>
-              <Gallery />
+              <LazyService microservice={gallery} loadingMessage={<Loader />} />
             </Route>
             <Route exact path='/'>
               <Todo />

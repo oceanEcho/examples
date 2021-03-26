@@ -1,0 +1,7 @@
+{
+  "microservices": {
+    "widgets": {
+      "url": "http://localhost:3002/widgets.js"
+    }
+  }
+}
