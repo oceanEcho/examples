@@ -54,6 +54,8 @@ module.exports = {
       exposes: {
         './Todo': './src/App',
         './Gallery': './src/pages/Gallery/Gallery',
+        './Zack': './src/pages/Zack/Zack',
+        './Jack': './src/pages/Jack/Jack',
       },
     }),
   ],
