@@ -14,6 +14,9 @@ export const Navigation: FC = () => {
       <NavLink to='/gallery' className={styles.NavLink} activeClassName={styles.ActiveNavLink}>
         <Icon name='Camera' width={36} height={36} />
       </NavLink>
+      <NavLink to='/video' className={styles.NavLink} activeClassName={styles.ActiveNavLink}>
+        <Icon name='Play' width={36} height={36} />
+      </NavLink>
       <NavLink to='/about' className={styles.NavLink} activeClassName={styles.ActiveNavLink}>
         <Icon name='Info' width={36} height={36} />
       </NavLink>

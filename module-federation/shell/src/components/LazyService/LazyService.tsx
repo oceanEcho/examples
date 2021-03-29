@@ -3,6 +3,7 @@ import React, { lazy, ReactNode, Suspense } from 'react';
 import { useDynamicScript } from './useDynamicScript';
 import { loadComponent } from './loadComponent';
 import { Microservice } from './types';
+import { ErrorBoundary } from '../ErrorBoundary/ErrorBoundary';
 
 interface ILazyServiceProps<T = Record<string, unknown>> {
   microservice: Microservice<T>;
@@ -32,8 +33,10 @@ export function LazyService<T = Record<string, unknown>>({
   const Component = lazy(loadComponent(microservice.scope, microservice.module));
 
   return (
-    <Suspense fallback={loadingNode}>
-      <Component {...(microservice.props || {})} />
-    </Suspense>
+    <ErrorBoundary>
+      <Suspense fallback={loadingNode}>
+        <Component {...(microservice.props || {})} />
+      </Suspense>
+    </ErrorBoundary>
   );
 }

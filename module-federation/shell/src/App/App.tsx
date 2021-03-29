@@ -9,6 +9,7 @@ import { Microservice } from '../components/LazyService/types';
 import { LazyService } from '../components/LazyService';
 import { Loader } from '../components/Loader';
 import { config } from '../config';
+import { Video } from '../pages/Video';
 
 import Todo from 'widgets/Todo';
 
@@ -31,6 +32,9 @@ export const App = () => {
             </Route>
             <Route path='/gallery'>
               <LazyService microservice={gallery} loadingMessage={<Loader />} />
+            </Route>
+            <Route path='/video'>
+              <Video />
             </Route>
             <Route exact path='/'>
               <Todo />
