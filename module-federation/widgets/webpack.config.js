@@ -45,10 +45,11 @@ module.exports = {
       name: 'widgets',
       filename: 'widgets.js',
       shared: {
-        react: { requiredVersion: deps.react },
-        'react-dom': { requiredVersion: deps['react-dom'] },
+        react: { requiredVersion: deps.react, singleton: true },
+        'react-dom': { requiredVersion: deps['react-dom'], singleton: true },
         'react-query': {
           requiredVersion: deps['react-query'],
+          singleton: true,
         },
       },
       exposes: {
